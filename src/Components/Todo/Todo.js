@@ -3,9 +3,9 @@ import "./Todo.css";
 
 const Todo = ({ todo }) => {
   const isDoneToBtnType = {
-    true: 'cancel',
-    false: 'complete'
-  }
+    true: "cancel",
+    false: "complete",
+  };
   const isDone = todo.idDone;
 
   return (
@@ -14,7 +14,9 @@ const Todo = ({ todo }) => {
       <p>{todo.content}</p>
       <div className="btn-group">
         <Button btnType="delete">삭제</Button>
-        <Button btnType={isDoneToBtnType[isDone]}>{isDone ? '취소' : '완료'}</Button>
+        <Button btnType={isDoneToBtnType[isDone]}>
+          {isDone ? "취소" : "완료"}
+        </Button>
       </div>
     </div>
   );

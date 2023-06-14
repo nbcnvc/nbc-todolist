@@ -3,6 +3,7 @@ import "./TodoForm.css";
 
 const TodoForm = (props) => {
   const [todoObj, setTodoObj] = useState({
+    id: 0,
     title: "",
     content: "",
     isDone: false,
