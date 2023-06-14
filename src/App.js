@@ -53,7 +53,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <Header />
       <TodoForm addTodoHandler={addTodoHandler} />
       <TodoList
@@ -61,7 +61,7 @@ const App = () => {
         onRemoveTodoHandler={removeTodoHandler}
         onToggleIsDoneHandler={toggleIsDoneHandler}
       />
-    </>
+    </div>
   );
 };
 
