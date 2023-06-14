@@ -3,7 +3,6 @@ import "./TodoForm.css";
 
 const TodoForm = (props) => {
   const [todoObj, setTodoObj] = useState({
-    id: 0,
     title: "",
     content: "",
     isDone: false,
@@ -11,6 +10,10 @@ const TodoForm = (props) => {
 
   const onAddTodo = (e) => {
     e.preventDefault();
+		if (todoObj.title.trim() === "" || todoObj.content.trim() === "") {
+      alert("제목과 내용은 비워둘 수 없습니다.");
+      return;
+    }
 
     props.addTodoHandler(todoObj);
     setTodoObj({
