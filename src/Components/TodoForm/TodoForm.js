@@ -13,10 +13,10 @@ const TodoForm = (props) => {
 
     props.addTodoHandler(todoObj);
     setTodoObj({
-      title: '',
-      content: '',
+      title: "",
+      content: "",
       isDone: false,
-    })
+    });
   };
 
   const titleChangeHandler = (e) => {
@@ -38,23 +38,25 @@ const TodoForm = (props) => {
   };
 
   return (
-    <form onSubmit={onAddTodo}>
-      <label htmlFor="title" >제목</label>
-      <input
-        type="text"
-        id="title"
-        value={todoObj.title}
-        onChange={titleChangeHandler}
-      />
-      <label htmlFor="content">내용</label>
-      <input
-        type="text"
-        id="content"
-        value={todoObj.content}
-        onChange={contentChangeHandler}
-      />
-      <button>추가하기</button>
-    </form>
+    <div>
+      <form onSubmit={onAddTodo}>
+        <label htmlFor="title">제목</label>
+        <input
+          type="text"
+          id="title"
+          value={todoObj.title}
+          onChange={titleChangeHandler}
+        />
+        <label htmlFor="content">내용</label>
+        <input
+          type="text"
+          id="content"
+          value={todoObj.content}
+          onChange={contentChangeHandler}
+        />
+        <button>추가하기</button>
+      </form>
+    </div>
   );
 };
 

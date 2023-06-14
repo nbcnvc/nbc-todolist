@@ -1,28 +1,27 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 import Header from "./Components/Header/Header";
 import TodoForm from "./Components/TodoForm/TodoForm";
-import TodoList from './Components/TodoList/TodoList';
+import TodoList from "./Components/TodoList/TodoList";
 
-import './App.css'
-
+import "./App.css";
 
 const App = () => {
-  const [todos, setTodos] = useState([])
+  const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (todo) => {
     setTodos((prevState) => {
-      return [...prevState, todo]
-    })
-  }
+      return [...prevState, todo];
+    });
+  };
 
   return (
-    <div>
+    <>
       <Header />
-      <TodoForm addTodoHandler={addTodoHandler}/>
+      <TodoForm addTodoHandler={addTodoHandler} />
       <TodoList todos={todos} />
-    </div>
+    </>
   );
-}
+};
 
 export default App;
