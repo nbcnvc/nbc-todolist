@@ -9,6 +9,7 @@ const TodoList = (props) => {
           key={todo.id}
           todo={todo}
           onRemoveHandler={props.onRemoveTodoHandler}
+          onToggleIsDoneHandler={props.onToggleIsDoneHandler}
         />
       );
 

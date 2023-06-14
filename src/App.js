@@ -21,7 +21,19 @@ const App = () => {
 
   const removeTodoHandler = (todoId) => {
     setTodos((prevState) => {
-      return prevState.filter((todo) => todo.id != todoId);
+      return prevState.filter((todo) => todo.id !== todoId);
+    });
+  };
+
+  const toggleIsDoneHandler = (todoId) => {
+    setTodos((prevState) => {
+      return prevState.map((todo) => {
+        if (todo.id === todoId) {
+          return { ...todo, isDone: !todo.isDone };
+        } else {
+          return todo;
+        }
+      });
     });
   };
 
@@ -29,7 +41,11 @@ const App = () => {
     <>
       <Header />
       <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList todos={todos} onRemoveTodoHandler={removeTodoHandler} />
+      <TodoList
+        todos={todos}
+        onRemoveTodoHandler={removeTodoHandler}
+        onToggleIsDoneHandler={toggleIsDoneHandler}
+      />
     </>
   );
 };

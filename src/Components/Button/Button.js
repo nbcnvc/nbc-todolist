@@ -1,12 +1,11 @@
-import './Button.css';
+import "./Button.css";
 
-const Button = (props) => {
+const Button = ({ children, todoId, btnType, onClickHandler }) => {
   const clickTodoHandler = () => {
-    props.onClickHandler(props.todoId);
-  }
+    onClickHandler(todoId);
+  };
 
-  const btnType = props.btnType
-  return <button onClick={clickTodoHandler}>{props.children}</button>
-}
+  return <button onClick={clickTodoHandler}>{children}</button>;
+};
 
 export default Button;
