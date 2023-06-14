@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Header from "./Components/Header/Header";
 import TodoForm from "./Components/TodoForm/TodoForm";
+import TodoList from './Components/TodoList/TodoList';
 
 import './App.css'
 
@@ -19,6 +20,7 @@ const App = () => {
     <div>
       <Header />
       <TodoForm addTodoHandler={addTodoHandler}/>
+      <TodoList todos={todos} />
     </div>
   );
 }
