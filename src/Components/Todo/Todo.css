@@ -1,0 +1,10 @@
+.todo {
+  display: flex;
+  flex-direction: column;
+
+  heigt: 200px;
+  width: 400px;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px;
+}
