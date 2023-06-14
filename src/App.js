@@ -10,7 +10,7 @@ const App = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (todo) => {
-    const maxId = todos.length > 0 ? Math.max(...todos.map(t => t.id)) : 0;
+    const maxId = todos.length > 0 ? Math.max(...todos.map((t) => t.id)) : 0;
     const newId = maxId + 1;
     todo.id = newId;
 
@@ -19,13 +19,17 @@ const App = () => {
     });
   };
 
-  // const removeTodoHandler = (todo)
+  const removeTodoHandler = (todoId) => {
+    setTodos((prevState) => {
+      return prevState.filter((todo) => todo.id != todoId);
+    });
+  };
 
   return (
     <>
       <Header />
       <TodoForm addTodoHandler={addTodoHandler} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onRemoveTodoHandler={removeTodoHandler} />
     </>
   );
 };
