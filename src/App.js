@@ -1,13 +1,28 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "./Components/Header/Header";
 import TodoForm from "./Components/TodoForm/TodoForm";
 import TodoList from "./Components/TodoList/TodoList";
 
+import { getTodosFromLS, saveTodosToLS } from "./Services/StorageService";
+
 import "./App.css";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
+
+  // initial rendering
+  useEffect(() => {
+    const storedTodos = getTodosFromLS("todos");
+    if (storedTodos) {
+      setTodos(storedTodos);
+    }
+  }, []);
+
+  // depend on todos state
+  useEffect(() => {
+    saveTodosToLS("todos", todos);
+  }, [todos]);
 
   const addTodoHandler = (todo) => {
     const maxId = todos.length > 0 ? Math.max(...todos.map((t) => t.id)) : 0;
