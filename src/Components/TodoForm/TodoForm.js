@@ -12,6 +12,11 @@ const TodoForm = (props) => {
     e.preventDefault();
 
     props.addTodoHandler(todoObj);
+    setTodoObj({
+      title: '',
+      content: '',
+      isDone: false,
+    })
   };
 
   const titleChangeHandler = (e) => {
@@ -34,14 +39,14 @@ const TodoForm = (props) => {
 
   return (
     <form onSubmit={onAddTodo}>
-      <label for="title">제목</label>
+      <label htmlFor="title" >제목</label>
       <input
         type="text"
         id="title"
         value={todoObj.title}
         onChange={titleChangeHandler}
       />
-      <label for="content">내용</label>
+      <label htmlFor="content">내용</label>
       <input
         type="text"
         id="content"
