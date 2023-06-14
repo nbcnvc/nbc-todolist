@@ -1,0 +1,11 @@
+.todo-form {
+  padding: 20px 0;
+}
+
+label {
+  vertical-align: top;
+}
+
+.todo-form__input {
+  margin-bottom: 10px;
+}

@@ -26,10 +26,10 @@ const TodoList = (props) => {
   return (
     <div className="todo-list">
       <h2>working</h2>
-      <div className="todo-list__working">{workingList}</div>
+      <div className="todo-list__section">{workingList}</div>
 
       <h2>done</h2>
-      <div className="todo-list__done">{doneList}</div>
+      <div className="todo-list__section">{doneList}</div>
     </div>
   );
 };
