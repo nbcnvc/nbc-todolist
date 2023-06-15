@@ -9,15 +9,8 @@ import { getTodosFromLS, saveTodosToLS } from "./Services/StorageService";
 import "./App.css";
 
 const App = () => {
-  const [todos, setTodos] = useState([]);
-
-  // initial rendering
-  useEffect(() => {
-    const storedTodos = getTodosFromLS("todos");
-    if (storedTodos) {
-      setTodos(storedTodos);
-    }
-  }, []);
+  const initialTodos = getTodosFromLS("todos");
+  const [todos, setTodos] = useState(initialTodos);
 
   // depend on todos state
   useEffect(() => {
@@ -53,7 +46,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <div className="container">
       <Header />
       <TodoForm addTodoHandler={addTodoHandler} />
       <TodoList
@@ -61,7 +54,7 @@ const App = () => {
         onRemoveTodoHandler={removeTodoHandler}
         onToggleIsDoneHandler={toggleIsDoneHandler}
       />
-    </>
+    </div>
   );
 };
 

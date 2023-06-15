@@ -3,8 +3,10 @@
   flex-direction: column;
 
   heigt: 200px;
-  width: 400px;
+  width: 300px;
   border: 2px solid black;
   border-radius: 5px;
   padding: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
+

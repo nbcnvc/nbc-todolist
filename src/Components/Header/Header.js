@@ -1,11 +1,11 @@
-import './Header.css'
+import "./Header.css";
 
 const Header = () => {
   return (
-    <header>
-      <h1>nbcnvc.dev's Todo list</h1>
+    <header className="header">
+      <h2>nbcnvc.dev's Todo list</h2>
     </header>
-  )
+  );
 };
 
 export default Header;
